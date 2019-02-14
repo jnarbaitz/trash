@@ -1,17 +1,31 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
 
-var UserSchema = new Schema({
+/*var validateEmail = function(email) {
+  var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  return re.test(email)
+};*/
+
+
+var UserSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    trim: true,
+    lowercase: true,
+    required: true,
+    //validate: [validateEmail, 'Please fill a valid email address'],
+    //match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
+  },
   username: {
-        type: String,
-        unique: true,
-        required: true
-    },
+    type: String,
+    trim: true,
+    unique: true,
+    required: true
+  },
   password: {
-        type: String,
-        required: true
-    }
+    type: String,
+    required: true
+  }
 });
 
 UserSchema.pre('save', function (next) {

@@ -2,7 +2,7 @@
   "name": "mevn-secure",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "didin jamaludin <didinj@gmail.com>",
+  "author": "jared <jared@server.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -23,12 +23,15 @@
     "express": "^4.16.3",
     "jsonwebtoken": "^8.2.0",
     "mongoose": "^5.0.12",
+    "mongoose-unique-validator": "^2.0.1",
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "serve-favicon": "^2.5.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuetify": "^1.2.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
